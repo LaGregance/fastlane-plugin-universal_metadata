@@ -97,9 +97,7 @@ screenshots
 
 During the action, your screenshots will be resized to match size required by iOS & Android and put it the good folder.
 
-```
-⚠️ Default folder is used only if the folder for language doesn’t exist (if language folder is empty, no screenshot will be uploaded).
-```
+⚠️ Default folder is used only if the folder for language doesn’t exist (if language folder is empty, no screenshot will be uploaded).  
 
 You can configure screenshot behavior by adding tags in the name of the file :
 
@@ -112,9 +110,7 @@ You can configure screenshot behavior by adding tags in the name of the file :
 
 So for example you can add a screenshot `random-name-apple-contain.png` that will be use only for iOS and use resizeMode contain.
 
-```
 ℹ️ The order of the screenshots on the store depends of alphabetical order of the screenshots names.
-```
 
 ## Result
 
@@ -170,9 +166,7 @@ metadata
 
 Now you are able to run `upload_to_app_store` & `upload_to_play_store` without pain.
 
-```
 ℹ️ Don’t forget that you can use universal_metadata action in your lane, before uploading to store for example 😉
-```
 
 ## Params
 
@@ -187,15 +181,14 @@ You can use different params with the action:
 
 ## Tips & Warning
 
-```
-⚠️ Your metadata folder will be erased each time you run the action, be sure to not having sensitive data on it. Also since it will be auto-generated, we recommend to add it to your `.gitignore`
-```
-```
-ℹ️ Personally I like to have all the result under fastlane/metadata, that’s why i use the `ios_screenshots_dir` params with the value `fastlane/metadata/screenshots`.
-```
+⚠️ Your metadata folder will be erased each time you run the action, be sure to not having sensitive data on it. 
+Also since it will be auto-generated, we recommend to add it to your `.gitignore`
+
+ℹ️ Personally I like to have all the result under fastlane/metadata, that’s why i use the `ios_screenshots_dir` 
+params with the value `fastlane/metadata/screenshots`.
+
 
 Because it’s not the default place for it, I have to add this to my Deliverfile:
-
 ```
 # Cause we use non-standard path for screenshots, we have to add this options
 ignore_language_directory_validation(true)
