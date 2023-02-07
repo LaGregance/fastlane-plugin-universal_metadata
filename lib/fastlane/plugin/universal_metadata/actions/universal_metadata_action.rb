@@ -26,6 +26,8 @@ module Fastlane
         ######### GENERATE SCREENSHOTS FOR EACH SIZE #########
         ######################################################
         Helper::UniversalMetadataScreenshots.generateScreenshots(languages, params, metadata_folder)
+
+        return
       end
 
       def self.description

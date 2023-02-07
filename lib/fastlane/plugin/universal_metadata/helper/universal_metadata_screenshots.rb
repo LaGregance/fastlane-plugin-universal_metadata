@@ -77,15 +77,20 @@ module Fastlane
       end
 
       def self.getScreenshotFiles(lang)
-        folder = 'fastlane/universal-metadata/screenshots/'
-        if File.exists?(folder + lang) then
-          return Dir.entries(folder + lang).map { |file| folder + lang + '/' + file }
-        elsif File.exists?(folder + 'default') then
-          return Dir.entries(folder + 'default').map { |file| folder + 'default/' + file }
+        folder = File.join(Helper::UniversalMetadataConst.universal_metadata_folder, 'screenshots')
+
+        if File.exists?(File.join(folder, lang)) then
+          # Nothing
+        elsif File.exists?(File.join(folder, 'default')) then
+          lang = 'default'
         else
           puts "Warning: " + lang + ' or default not found for screenshots'
           return []
         end
+
+        return Dir.entries(File.join(folder, lang))
+                  .select{ |f| !%w[. ..].include?(f) }
+                  .map { |file| File.join(folder, lang, file) }
       end
 
       def self.resizeImage(source, target, width, height, resizeContain, addBorder)
