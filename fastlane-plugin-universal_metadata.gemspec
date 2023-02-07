@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ''
 
   spec.summary       = 'Unify metadata files for iOS & Android'
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-universal_metadata"
+  spec.homepage      = "https://github.com/LaGregance/fastlane-plugin-universal_metadata"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
