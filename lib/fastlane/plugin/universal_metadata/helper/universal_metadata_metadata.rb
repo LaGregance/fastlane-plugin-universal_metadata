@@ -63,9 +63,9 @@ module Fastlane
       def self.getDescription(full, lang)
         folder = 'fastlane/universal-metadata/description/'
         file = full ? '/full_description.txt' : '/short_description.txt'
-        if File.exists?(folder + lang + file) then
+        if File.exist?(folder + lang + file) then
           return File.read(folder + lang + file)
-        elsif File.exists?(folder + 'default' + file) then
+        elsif File.exist?(folder + 'default' + file) then
           return File.read(folder + 'default' + file)
         else
           puts "Warning: " + lang + ' or default not found for description'
@@ -76,9 +76,9 @@ module Fastlane
       def self.getReleaseNotes(lang)
         folder = File.join('fastlane/universal-metadata/release-notes/')
 
-        if File.exists?(File.join(folder, lang + '.txt')) then
+        if File.exist?(File.join(folder, lang + '.txt')) then
           return File.read(File.join(folder, lang + '.txt'))
-        elsif File.exists?(File.join(folder, 'default.txt')) then
+        elsif File.exist?(File.join(folder, 'default.txt')) then
           return File.read(File.join(folder, 'default.txt'))
         else
           puts "Warning: " + lang + ' or default not found for release-notes'

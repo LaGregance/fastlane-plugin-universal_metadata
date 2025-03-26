@@ -79,9 +79,9 @@ module Fastlane
       def self.getScreenshotFiles(lang)
         folder = File.join(Helper::UniversalMetadataConst.universal_metadata_folder, 'screenshots')
 
-        if File.exists?(File.join(folder, lang)) then
+        if File.exist?(File.join(folder, lang)) then
           # Nothing
-        elsif File.exists?(File.join(folder, 'default')) then
+        elsif File.exist?(File.join(folder, 'default')) then
           lang = 'default'
         else
           puts "Warning: " + lang + ' or default not found for screenshots'
